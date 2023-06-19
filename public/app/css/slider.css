@@ -1,0 +1,138 @@
+.slider2 {
+  width: 100%;
+    height: 70rem;
+    margin: 0 auto;
+    position: relative;
+    /* IN THE END */
+    overflow: hidden;
+    background-image: url(../img/slider-clinic.png);
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .slide2 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 75rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* THIS creates the animation! */
+    /*transition: transform 1s; */
+	animation:fading 5s infinite ;
+  }
+	@keyframes fading {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+	}
+
+  .slide2 > img {
+    /* Only for images that have different size than slide */
+    width: 403px;
+    height: 384px;
+    object-fit: fill;
+    margin-left: 30em;
+  }
+  
+  .slider__btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    border: none;
+    background-color: #ff9900b2;
+    font-family: inherit;
+    color: #fff;
+    border-radius: 50%;
+    height: 5.5rem;
+    width: 5.5rem;
+    font-size: 2rem;
+    padding-top: 0.3rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }
+  
+  .slider__btn--left {
+    left: 6%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .slider__btn--right {
+    right: 6%;
+    transform: translate(50%, -50%);
+  }
+  
+  .dots2 {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    display: flex;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+  
+  .dots__dot {
+       border: none;
+       background-color: #fff;
+       opacity: 0.7;
+       height: 0.4rem;
+       width: 3rem;
+       margin:0 0.5rem;
+       cursor: pointer;
+       transition: all 0.5s;
+       border-radius: 0.1rem;
+       -webkit-border-radius: 0.1rem;
+       -moz-border-radius: 0.1rem;
+       -ms-border-radius: 0.1rem;
+       -o-border-radius: 0.1rem;
+}
+  
+  .dots__dot--active {
+    /* background-color: #fff; */
+    background-color: #ff9700;
+    opacity: 1;
+  }
+  
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Next & previous buttons */
+  .prev2,
+  .next2 {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next2 {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a grey background color */
+  .prev2:hover,
+  .next2:hover {
+    background-color: #f1f1f1;
+    color: black;
+  }

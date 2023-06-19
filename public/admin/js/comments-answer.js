@@ -1,0 +1,1 @@
+let comment_answer_btn=document.querySelectorAll(".answer_btn");let input=document.querySelector(".hide_input");comment_answer_btn.forEach(btns=>{    btns.onclick=function(){            let id=btns.getAttribute("data-id");            input.value=id;    }});

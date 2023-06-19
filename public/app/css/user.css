@@ -1,0 +1,254 @@
+.darokhane3 {
+    background: url(../img/Login.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+	min-height: 50rem;
+    width: 100%;
+}
+.darokhane4{
+    background: url(../img/Lab-Result.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+	min-height: 50rem;
+    width: 100%;
+}
+.Login_body {
+    width: 100%;
+}
+.Login_body_title {
+    width: 100%;
+    justify-content: flex-start !important;
+    padding: 4rem 0rem;
+    margin-right: 4rem;
+    margin-top: 1rem;
+	min-height: 22rem;
+}
+.Login_body_title img {
+    margin-left: 1.5rem;
+}
+.Login_body_title span {
+    color: #0D447A;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.Login_body_title span  small{
+    margin: 0 1rem;
+    font-size: 1.9rem !important;
+}
+.login_Frm,
+.loginForm {
+    width: 100%;
+	margin-bottom: 5rem;
+}
+.login_inputBox {
+    width: 35%;
+    margin: 1rem auto;
+}
+.login_input{
+    padding: 0 2rem !important;
+    outline: none;
+}
+.login_input::placeholder{
+    font-size: 1.3rem;
+    opacity: 0.8;
+}
+.login_inputBox label {
+    width: 15rem;
+    font-size: 1.5rem;
+    
+}
+.Login_btnBox {
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+}
+.Login_btnBox a {
+    color: #0071BB;
+    margin-left: 2rem;
+    margin-right: 8rem;
+}
+.login_btn {
+    padding: 0.6rem 4rem;
+    background-color: #2E3191;
+    color: #fff;
+    border-radius: 1.5rem;
+    -webkit-border-radius: 1.5rem;
+    -moz-border-radius: 1.5rem;
+    -ms-border-radius: 1.5rem;
+    -o-border-radius: 1.5rem;
+    cursor: pointer;
+    border: 0.1rem solid #2E3191;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+.login_btn:hover{
+    border: 0.1rem solid #2E3191;
+    color: #2E3191;
+    background-color: transparent;
+}
+.mb {
+    margin-bottom: 10rem;
+}
+.loginBox_info {
+    width: 70%;
+    border-top: 0.1rem solid #ff9700;
+    margin: 2rem auto;
+    flex-direction: column;
+    align-items: flex-start !important;
+    line-height: 2;
+	margin-bottom: 7rem;
+}
+.loginBox_info a {
+    color: #3838b9;
+    text-decoration: underline;
+}
+.LabResult_input label {
+    width: 30rem;
+    text-align: right;
+    margin-left: 2rem;
+}
+.LabResult_input {
+    position: relative;
+    margin-bottom: 3rem;
+}
+.LabResult_input span {
+    position: absolute;
+    bottom: -2rem;
+    right:1rem;
+    opacity: 0.5;
+    font-size: 1.3rem;
+    width: 100%;
+}
+.LabResul_tFrm {
+    width: 50%;
+    margin: 0 auto;
+	margin-top: -7rem;
+}
+.w-100{
+    width: 100%;
+    position: relative;
+    
+}
+.LabResul_tFrm .login_inputBox {
+    width: 100% !important;
+}
+.LabBtn {
+    margin-right: auto;
+}
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #3b3b3b65;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.loading.active{
+    display: flex;
+}
+.loading small {
+    top: 0.5rem;
+    right: 0.3rem;
+    width: 5rem;
+    height: 5rem;
+    border: 0.4rem solid #000000;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    animation: loading 1s linear infinite;
+    -webkit-animation: loading 1s linear infinite;
+    position: relative;
+}
+.loading small::before {
+    position: absolute;
+    content: "";
+    top: 1rem;
+    left: 0.3rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #000000;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+}
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+.alert1{
+    padding: 1rem ;
+    background-color: #eb920c9d;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+.L-R-label{
+    text-align: left !important;
+    color: #000000 !important;
+    font-weight: 500;
+}
+.lad_inputs{
+    text-align: left;
+    background-color: #f1f1f1;
+}
+.LabResul_text{
+    padding-top: 1rem;
+    color: #666666;
+    font-size: 1.3rem;
+}
+.LabResul_text span{
+    font-size: 1.3rem;
+    padding-right: 0.7rem;
+}
+.notic{
+    color: #808080;
+    opacity: 1 !important;
+    font-size: 1.2rem !important;
+}
+.forget_pass_link{
+    /* padding: 1rem 0; */
+}
+.login_inputBox_lbl{
+    color:  #000000 !important;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.user_login_notice span{
+ color: #666;
+ line-height: 5rem;
+}
+.user_login_notice span a{
+    color: #2e3391;
+}
+.login_input {
+    background-color: #f1f1f1;
+}
+.login_input::placeholder{
+    color: #b3b3b3;
+}

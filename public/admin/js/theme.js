@@ -1,0 +1,1 @@
+let theme_change=document.querySelector(".theme-change");theme_change.onclick=function(){    $.ajax({        type: "POST",        url: "php/theme.php",        data: {theme:"true"},        success: function (response) {                      window.location.reload();        }    });}
