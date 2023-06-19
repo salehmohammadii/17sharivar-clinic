@@ -224,7 +224,7 @@
                             <img width="100" src="<?= assets('public/app/img/darokhane_icon.png') ?>" class="darokhane_icon1" alt="darokhane_icon">
                             <h5>داروخانــــــه</h5>
                         </div>
-                        <a href="#" class="learn_more1 payBtn">بیشتر بدانید<i class="fas fa-angle-left"></i>
+                        <a href="<?= url('drug-store') ?>" class="learn_more1 payBtn">بیشتر بدانید<i class="fas fa-angle-left"></i>
                         </a>
                     </div>
                 </div>
@@ -249,7 +249,7 @@
                             <img width="100" src="<?= assets('public/app/img/donate.png')?>" class="darokhane_icon2" alt="darokhane_icon">
                             <h5>صندوق خیــریه درمانی</h5>
                         </div>
-                        <a href="#" class="learn_more1 payBtn">پرداخت آنلاین<i class="fas fa-angle-left"></i>
+                        <a href="<?= url('charity') ?>" class="learn_more1 payBtn">پرداخت آنلاین<i class="fas fa-angle-left"></i>
                         </a>
                     </div>
                 </div>

@@ -75,6 +75,16 @@ class MainPage extends home
             'childs'=>$childs
         ]));
     }
-
-
+    public function charity()
+    {
+        $content=$this->db->select("select * from settings where page_key='charity'")->fetch();
+        $content=$content['value']??'';
+        $this->showpage('charity.php','خیریه',array_merge(['content'=>$content],$this->get_general_info()));
+    }
+    public function drug_store()
+    {
+        $content=$this->db->select("select * from settings where page_key='drugstore'")->fetch();
+        $content=$content['value']??'';
+        $this->showpage('drugstore.php','داروخانه',array_merge(['content'=>$content],$this->get_general_info()));
+    }
 }

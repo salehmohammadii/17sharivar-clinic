@@ -1560,14 +1560,16 @@ padding-right: 2rem;
 background-repeat: no-repeat;
 background-position: right center;
 }
-.Terms-and-rules{
+.terms-and-rules{
     text-align: center;
     padding: 2rem 0;
 }
-.Terms-and-rules h2{
+.terms-and-rules h2{
 font-size: 1.8rem;
 display: block;
 }
+
+
 .trems_items{
     width: 90%;
     margin: 0 auto;
@@ -1578,7 +1580,7 @@ display: block;
     -moz-border-radius: 1.5rem;
     -ms-border-radius: 1.5rem;
     -o-border-radius: 1.5rem;
-    padding: 1rem 0;
+    padding: 2rem ;
     margin-bottom: 2rem;
 }
 .trems_items2{

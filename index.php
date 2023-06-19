@@ -11,7 +11,8 @@ define("desplay_error",true);
 require_once 'conf/config.php';
 
 
-
+//config
+require_once 'conf/config.php';
 
 
 
@@ -76,7 +77,7 @@ return \Parsidev\Jalali\jDate::forge($date)->format($format);
 function protocol(): string
 {
 
-    return  'https://';
+    return  'http://';
 }
 
 
@@ -403,6 +404,8 @@ uri("paraclinic/{title}",'app\MainPage',"paraclinic");
 uri("health-service/{title}",'app\MainPage',"health_service");
 uri("terms",'app\MainPage',"terms");
 uri("privacy-policy",'app\MainPage',"privacy");
+uri("charity",'app\MainPage',"charity");
+uri("drug-store",'app\MainPage',"drug_store");
 
 //contact-us
 uri("contact-us",'app\ContactUs',"index");

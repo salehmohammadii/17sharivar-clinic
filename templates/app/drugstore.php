@@ -11,23 +11,17 @@
     <div class="row">
         <div class="col-12">
             <div class="ContentHeaderModulePage">
-                <h1 class="ContentCaption">قوانین</h1>
+                <h1 class="ContentCaption">داروخانه</h1>
             </div>
         </div>
         <div class="col-12">
             <div class="terms-and-rules">
-                <h2>شرایط و قوانین استفاده از خدمات درمانگاه</h2>
+                <h2>داروخانه درمانگاه</h2>
             </div>
-            <div class="trems_items padding">
-                <?php /** @var array $parametrs */
-                foreach ($parametrs['terms'] as $trem) {
-                 ?>
-                        <p>
-                            <?= $trem['content']; ?>
-                        </p>
-                    <?php
-                } ?>
+            <div class="trems_items">
+                <?= $parametrs['content'] ?>
             </div>
+
         </div>
     </div>
 </div>
