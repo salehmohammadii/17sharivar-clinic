@@ -6,12 +6,9 @@ session_start();
 define("base_path",__DIR__);
 define("current_domain",current_domain()."");
 define("desplay_error",true);
-define("db_host",'localhost');
-define("db_name","saleh_clinik-new");
-define("db_username","saleh_clinic");
-define("db_password","k4CHYXm~YUB(");
 
-
+//config
+require_once 'conf/config.php';
 
 
 
