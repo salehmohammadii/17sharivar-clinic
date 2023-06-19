@@ -11,9 +11,6 @@ define("desplay_error",true);
 require_once 'conf/config.php';
 
 
-//config
-require_once 'conf/config.php';
-
 
 
 //admin
@@ -77,7 +74,7 @@ return \Parsidev\Jalali\jDate::forge($date)->format($format);
 function protocol(): string
 {
 
-    return  'http://';
+    return  'https://';
 }
 
 
