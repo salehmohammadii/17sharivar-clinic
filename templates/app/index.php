@@ -282,7 +282,7 @@
 
                                 </div>
                                 <div class="sub_infoBlog_p2">
-                                    <span>نویسنده: <?= $article['writer']; ?> <img width="33" src="<?= assets('public/app/img/user_vector.png')?>" alt="blog_vector"></span>
+                                    <span> <?= $article['writer']; ?> <img width="33" src="<?= assets('public/app/img/user_vector.png')?>" alt="blog_vector"></span>
 
                                 </div>
                             </div>
