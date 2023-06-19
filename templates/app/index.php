@@ -271,7 +271,7 @@
                 </div>
                 <?php  if (count($parametrs['articles']) >= 1) { ?>
                 <?php foreach ($parametrs['articles'] as $article) { ?>
-                <div class="col-12 col-md-12 col-lg-6" style="cursor:pointer;">
+                <div class="col-12 col-md-12 col-lg-4" style="cursor:pointer;">
                     <div class="blog_body">
                         <img class="blog_img" src="<?= assets( $article['poster']); ?>" alt="blog_photo">
                         <div class="Blog_contentBox">

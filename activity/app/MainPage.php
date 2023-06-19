@@ -11,7 +11,7 @@ class MainPage extends home
     public function index()
     {
         $settings=$this->get_site_settings();
-        $articles=$this->get_articles(2);
+        $articles=$this->get_articles(3);
         $slides=$this->get_slides();
         $sliders=$this->get_sliders();
         $paraclinics=$this->get_paraclinics(0);
