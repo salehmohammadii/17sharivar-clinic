@@ -752,7 +752,7 @@ position: relative;
 .blog_body {
     width: 95%;
     height: 50rem;
-    border-left: 13rem solid #9AA5A0;
+    border-left: 8vw solid #9AA5A0;
     border-bottom-left-radius: 5rem;
     position: relative;
     padding: 1rem;
@@ -769,7 +769,7 @@ position: relative;
 .blog_img {
     margin-right: auto;
     display: block;
-    margin-left: -14rem;
+    margin-left: -9vw;
     padding-top: 2rem;
     width: 29rem;
     height: 35rem;
@@ -788,6 +788,7 @@ position: relative;
     display: flex;
     align-items: center;
     justify-content:flex-start;
+    gap: 10px;
 }
 .sub_infoBlog_p1 {
     display: flex;
