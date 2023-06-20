@@ -271,11 +271,11 @@
                 </div>
                 <?php  if (count($parametrs['articles']) >= 1) { ?>
                 <?php foreach ($parametrs['articles'] as $article) { ?>
-                <div class="col-12 col-md-12 col-lg-4" style="cursor:pointer;">
+                <div class="col-12 col-md-12 col-lg-4" >
                     <div class="blog_body">
-                        <img class="blog_img" src="<?= assets( $article['poster']); ?>" alt="blog_photo">
+                        <a href="<?= url('blog/'.urlencode($article['seo_title'])) ; ?>">   <img class="blog_img" src="<?= assets( $article['poster']); ?>" alt="blog_photo"></a>
                         <div class="Blog_contentBox">
-                            <p><?= $article['title']; ?></p>
+                            <a href="<?= url('blog/'.urlencode($article['seo_title'])) ; ?>"><?= $article['title']; ?></a>
                             <div class="sub_infoBog">
                                 <div class="sub_infoBlog_p1">
                                     <span>مقاله<img width="23" src="<?=assets('public/app/img/blog_vector.png')?>" alt="blog_vector"></span>

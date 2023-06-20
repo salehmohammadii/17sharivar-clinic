@@ -775,7 +775,7 @@ position: relative;
     height: 35rem;
     object-fit: cover;
 }
-.Blog_contentBox p {
+.Blog_contentBox a {
     display: block;
     padding: 1.3rem 1rem;
     line-height: 1.5;
