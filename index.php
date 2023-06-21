@@ -74,7 +74,13 @@ return \Parsidev\Jalali\jDate::forge($date)->format($format);
 function protocol(): string
 {
 
-    return  'http://';
+        if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+            return 'https://';
+        }
+        else {
+            return 'http://';
+        }
+
 }
 
 
