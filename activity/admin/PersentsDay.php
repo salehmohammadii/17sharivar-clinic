@@ -38,6 +38,7 @@ left join skills on users.skill=skills.id')->fetchAll();
             } else {
                 $x = 1;
             }
+        dd([$day,$x,$id]);
             $db->update('presentday',[$day],[$x],'user_id',$id);
                 echo "ok";
         }
