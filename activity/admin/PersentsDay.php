@@ -33,7 +33,8 @@ left join skills on users.skill=skills.id')->fetchAll();
         $day = $request['weekDay'];
         $db=new database();
         $user = $db->select("SELECT $day FROM presentday WHERE user_id=?",[$id])->fetch();
-            if ($user[$day] == 1) {
+        dd($user);
+        if (isset($user[$day]) and $user[$day] == 1) {
                 $x = 0;
             } else {
                 $x = 1;
