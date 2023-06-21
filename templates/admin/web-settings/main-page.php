@@ -5,20 +5,20 @@
             <label class="d-block mt-5">عکس صفحه اصلی درباره ما</label>
             <input type="file" name="about_poster" class="w-100 form-control mt-1" />
             <label class="d-block mt-5">متن درباره ما</label>
-            <textarea dir="rtl" name="about_summary" class="editor" id="editor"></textarea>
+            <textarea dir="rtl" name="about_summary" class="editor" id="editor"><?= $parametrs['about_summary'] ?></textarea>
             <div class=" d-flex align-items-center justify-content-end">
             </div>
         </div>
         <div class="inputBox w-100 mt-5  "  style="margin-bottom: 80px">
 
             <label class="d-block mt-5">متن داروخانه</label>
-            <textarea dir="rtl" name="drugstore_summary" class="editor" id="editor"></textarea>
+            <textarea dir="rtl" name="drugstore_summary" class="editor" id="editor"><?= $parametrs['drugstore_summary'] ?></textarea>
             <div class=" d-flex align-items-center justify-content-end">
             </div>
         </div>
         <div class="inputBox w-100 mt-5  "  style="margin-bottom: 80px">
             <label class="d-block mt-5">متن خیریه</label>
-            <textarea dir="rtl" name="charity_summary" class="editor" id="editor"></textarea>
+            <textarea dir="rtl" name="charity_summary" class="editor" id="editor"><?= $parametrs['charity_summary'] ?></textarea>
             <div class=" d-flex align-items-center justify-content-end">
             </div>
         </div>

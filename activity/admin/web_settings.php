@@ -43,7 +43,10 @@ class web_settings extends admin  {
 
     public function main_page()
     {
-        $this->showpage("web-settings/main-page.php","صفحه اصلی");
+        $db=new database();
+        $parametrs=$db->select('select * from settings where id=1')->fetch();
+        $parametrs=json_decode($parametrs,true);
+        $this->showpage("web-settings/main-page.php","صفحه اصلی",$parametrs);
     }
 
     public function about_us()
