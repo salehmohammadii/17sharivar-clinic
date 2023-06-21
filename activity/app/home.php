@@ -81,7 +81,7 @@ class home
 
     protected function get_articles_by_tag($limit,$tag)
     {
-        return $this->db->select("SELECT a.*,t.title as t_title FROM articles as a left join article_type t on a.type = t.id where a.tags like ? ORDER BY id DESC LIMIT $limit",["%tag%"])->fetchAll();
+        return $this->db->select("SELECT a.*,t.title as t_title FROM articles as a left join article_type t on a.type = t.id where a.tags like ? ORDER BY id DESC LIMIT $limit",["%$tag%"])->fetchAll();
     }
 
     protected function get_article_types()

@@ -54,7 +54,7 @@ class Blog extends home
     {
         $tag=urldecode($tag);
         $settings = $this->get_site_settings();
-        $articles = $this->get_articles_by_category(9,$tag);
+        $articles = $this->get_articles_by_tag(9,$tag);
         $categories = $this->get_article_types();
         $parametrs = array_merge($this->get_general_info(), ['posts' => $articles, 'categories' => $categories]);
         $this->showpage("blog/index.php", "بلاگ", $parametrs);
