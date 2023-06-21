@@ -48,7 +48,6 @@ class notification
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
         $result = curl_exec($ch);
         curl_close($ch);
-        dd($result);
         return true;
     }
 }

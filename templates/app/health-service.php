@@ -41,11 +41,11 @@
                                 <h2>
                                     <?= $parametrs['health_service']['title'] ?>
                                 </h2>
-
+                                <div class="paraBox df">
                                     <img width="150" 
                                     src="<?= assets( $parametrs['health_service']['page_poster']) ?>" alt="title_logo">
                                      <?= $parametrs['health_service']['content'] ?>
-
+                                </div>
                             </div>
                         </div>
             </div>
