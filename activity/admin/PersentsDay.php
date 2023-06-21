@@ -4,12 +4,17 @@
 namespace admin;
 
 
+use auth\auth;
 use database\database;
 
-class PersentsDay extends admin
+class PersentsDay
 {
     public function index()
     {
+        $auth=new auth();
+        if( $auth->isAdmin()==false){
+            $this->redirect("auth/login");
+        }
         $db = new database();
         $users = $db->select('select presentday.*,users.*,skills.title as sk_title from presentday left join users on presentday.user_id = users.id 
 left join skills on users.skill=skills.id')->fetchAll();
@@ -49,5 +54,16 @@ left join skills on users.skill=skills.id')->fetchAll();
         $db->update('presentday',[$day_names],[$ontime],'user_id',$user_ids);
         echo "all";
     }
-    
+    protected function showpage($src,$title,$parametrs=null){
+        require_once base_path."/templates/admin/layouts/header.php";
+        require_once base_path."/templates/admin/".$src;
+        require_once base_path."/templates/admin/layouts/footer.php";
+
+    }
+
+
+    protected function redirect($url){
+        header('location: '.trim(current_domain,"/ ")."/".$url);
+        exit();
+    }
 }
