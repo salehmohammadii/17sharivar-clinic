@@ -23,11 +23,11 @@
                         /** @var array $parametrs */
                         foreach($parametrs['fathers'] as $father){
                         ?>
-                            <a href="<?= url('paraclinic/'.urlencode($father['title'])) ?>"><?= $father['title'] ?></a>
+                            <a href="<?= url('paraclinic/'.clinik_urlencode($father['url'])) ?>"><?= $father['title'] ?></a>
                         <?php
                         }
                         ?>
-                        <a href="<?= url('health-service/'.urlencode($parametrs['health_service']['title'])) ?>"><?= $parametrs['health_service']['title'] ?></a>
+                        <a href="<?= url('health-service/'.clinik_urlencode($parametrs['health_service']['url'])) ?>"><?= $parametrs['health_service']['title'] ?></a>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                                     <img src="<?=assets( $para_clinic_List['poster']) ?>" width="75" alt="Paraclinic_item photo">
                                     <h4><?= $para_clinic_List['title'] ?></h4>
                                     <p> <?= substr($para_clinic_List['content'], 0, 120)  ?> </p>
-                                    <a href="<?= url('health-service/'.urlencode( $para_clinic_List['title']))  ?>" class="learn_more1 learn_more3"> بیشتر بدانید <i class="fas fa-angle-left"></i></a>
+                                    <a href="<?= url('health-service/'.clinik_urlencode( $para_clinic_List['url']))  ?>" class="learn_more1 learn_more3"> بیشتر بدانید <i class="fas fa-angle-left"></i></a>
                                 </div>
                             <?php }
                         }  ?>

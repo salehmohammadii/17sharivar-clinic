@@ -36,7 +36,7 @@
                                     <h1 class="df">دسته بندی<i class="fas fa-chevron-down"></i> </h1>
                                     <div class="cat_itemsBox cat_itemsBox1">
                                         <?php foreach ($parametrs['categories'] as $categpry_List) { ?>
-                                            <a href="<?= url('category/'.urlencode($categpry_List['title'])) ; ?>"> <?= $categpry_List['title']; ?> </a>
+                                            <a href="<?= url('category/'.clinik_urlencode($categpry_List['title'])) ; ?>"> <?= $categpry_List['title']; ?> </a>
                                         <?php } ?>
                                     </div>
                                     <div class="scrollBox">
@@ -47,7 +47,7 @@
                                     <h2 class="df">جدیدترین مطالب<i class="fas fa-chevron-down"></i> </h2>
                                     <div class="cat_itemsBox cat_itemsBox2">
                                         <?php foreach ($parametrs['posts'] as $articles_List) { ?>
-                                            <a href="<?=url('blog/'.urlencode( $articles_List['seo_title'])) ; ?>"> <?= $articles_List['title']; ?> </a>
+                                            <a href="<?=url('blog/'.clinik_urlencode( $articles_List['url'])) ; ?>"> <?= $articles_List['title']; ?> </a>
                                         <?php } ?>
                                     </div>
                                     <div class="scrollBox">
@@ -59,7 +59,7 @@
                                     <?php $tags = explode(",", $articles_List['tags']);
                                     foreach ($tags as $tag) {
                                         ?>
-                                        <a href="<?= url('tag/'.urlencode($tag)) ; ?>"><?= $tag; ?></a>
+                                        <a href="<?= url('tag/'.clinik_urlencode($tag)) ; ?>"><?= $tag; ?></a>
                                     <?php } ?>
                                 </div>
                             </aside>
@@ -78,7 +78,7 @@
                                         </div>
                                         <h2><?= $articles_List['title']; ?></h2>
                                         <span><i class="far fa-clock"></i> مدت زمان مطالعه <?= $articles_List['time']; ?> دقیقه </span>
-                                        <a class="learn_more4 df" href="<?=url('blog/'.urlencode($articles_List['url'])) ; ?>">بیشتر بخوانید <i class="fas fa-angle-left"></i> </a>
+                                        <a class="learn_more4 df" href="<?=url('blog/'.clinik_urlencode($articles_List['url'])) ; ?>">بیشتر بخوانید <i class="fas fa-angle-left"></i> </a>
                                     </div>
                                 <?php } ?>
                             <?php } ?>

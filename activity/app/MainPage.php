@@ -51,9 +51,9 @@ class MainPage extends home
 
     public function paraclinic($title)
     {
-        $title=urldecode($title);
+        $title=clinik_urldecode($title);
         $paraclinics= $this->db->select('select * from paraclinic ')->fetchAll();
-        $paraclinic= $this->db->select('select * from paraclinic where title=?',[$title])->fetch();
+        $paraclinic= $this->db->select('select * from paraclinic where url=?',[$title])->fetch();
         $fathers=$this->get_fathers($paraclinics,$paraclinic['child_of']);
         $childs=$this->db->select('select * from paraclinic where child_of=?',[$paraclinic['id']])->fetchAll();
         $this->showpage('paraclinic.php',$title,array_merge($this->get_general_info(),[
@@ -64,9 +64,9 @@ class MainPage extends home
     }
     public function health_service($title)
     {
-        $title=urldecode($title);
+        $title=clinik_urldecode($title);
         $health_services= $this->db->select('select * from health_ser ')->fetchAll();
-        $health_service= $this->db->select('select * from health_ser where title=?',[$title])->fetch();
+        $health_service= $this->db->select('select * from health_ser where url=?',[$title])->fetch();
         $fathers=$this->get_fathers($health_services,$health_service['child_of']);
         $childs=$this->db->select('select * from health_ser where child_of=?',[$health_service['id']])->fetchAll();
         $this->showpage('health-service.php',$title,array_merge($this->get_general_info(),[

@@ -18,11 +18,11 @@
                     /** @var array $parametrs */
                     foreach ($parametrs['fathers'] as $father) {
                         ?>
-                        <a href="<?= url('paraclinic/' . urlencode($father['title'])) ?>"><?= $father['title'] ?></a>
+                        <a href="<?= url('paraclinic/' . clinik_urlencode($father['url'])) ?>"><?= $father['title'] ?></a>
                         <?php
                     }
                     ?>
-                    <a href="<?= url('paraclinic/' . urlencode($parametrs['paraclinic']['title'])) ?>"><?= $parametrs['paraclinic']['title'] ?></a>
+                    <a href="<?= url('paraclinic/' . clinik_urlencode($parametrs['paraclinic']['url'])) ?>"><?= $parametrs['paraclinic']['title'] ?></a>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
                                  alt="Paraclinic_item photo">
                             <h4><?= $para_clinic_List['title'] ?></h4>
                             <p> <?= substr($para_clinic_List['content'], 0, 120) ?> </p>
-                            <a href="<?= url('paraclinic/' . urlencode($para_clinic_List['title'])) ?>"
+                            <a href="<?= url('paraclinic/' . clinik_urlencode($para_clinic_List['url'])) ?>"
                                class="learn_more1 learn_more3"> بیشتر بدانید <i class="fas fa-angle-left"></i></a>
                         </div>
                     <?php }

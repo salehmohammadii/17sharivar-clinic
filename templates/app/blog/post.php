@@ -16,7 +16,7 @@ if (count($parametrs['post']) >= 1) { ?>
                     <div class="linkBox df" style="margin-top: 20px ;">
                         <a href="../">خانه</a>
                         <a class="blog-linkBox" href="blogs">بلاگ</a>
-                        <a href="<?=url('blog/'.urlencode($parametrs['post']['seo_title'])) ; ?>"><?= $parametrs['post']['seo_title']?></a>
+                        <a href="<?=url('blog/'.clinik_urlencode($parametrs['post']['url'])) ; ?>"><?= $parametrs['post']['seo_title']?></a>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@ if (count($parametrs['post']) >= 1) { ?>
                     <div class="tagBox df">
                         <div class="tag_box1">
                             <?php if($parametrs['suggested_posts']!=false and count($parametrs['suggested_posts'])>=1) { ?>
-                                <span>مقاله مرتبط:<a href="<?=url('blog/'.urlencode($parametrs['suggested_posts']['seo_title']))  ?>"><?= $parametrs['suggested_posts']['title']; ?></a></span>
+                                <span>مقاله مرتبط:<a href="<?=url('blog/'.clinik_urlencode($parametrs['suggested_posts']['url']))  ?>"><?= $parametrs['suggested_posts']['title']; ?></a></span>
 
                             <?php } ?>
 
@@ -70,16 +70,16 @@ if (count($parametrs['post']) >= 1) { ?>
                                 <?php $tags = explode(",", $parametrs['post']['tags']);
                                 foreach ($tags as $tag) {
                                     ?>
-                                    <a href="<?=url('tag/'.urlencode($tag)) ; ?>"><?= $tag; ?></a>
+                                    <a href="<?=url('tag/'.clinik_urlencode($tag)) ; ?>"><?= $tag; ?></a>
                                 <?php } ?>
                             </div>
                         </div>
                         <div class="share df">
                             <span>این مقاله را با دوستانتان به اشتراک بگذارید:</span>
-                            <a href="tg://msg_url?url=<?= url('blog/'.urlencode($parametrs['post']['seo_title'])) ?>"><img width="25" src="<?= assets('public/app/img/02.webp') ?>" alt="ins"></a>
-                            <a href="https://eitaa.com/share/url?url=<?= url('blog/'.urlencode($parametrs['post']['seo_title'])) ?>"><img width="25" src="<?= assets('public/app/img/04.png') ?>" alt="linkdin"></a>
-                            <a href="mailto:?subject=<?= $parametrs['post']['seo_title'] ?>&body=این مقاله رو حتما چک کن:%20<?= url('blog/'.urlencode($parametrs['post']['seo_title'])) ?>"><img width="20" src="<?= assets('public/app/img/03.png') ?>" alt="facebook"></a>
-                            <a href="whatsapp://send?text=<?= url('blog/'.urlencode($parametrs['post']['seo_title'])) ?>"><img width="20" src="<?= assets('public/app/img/01.png') ?>" alt="facebook"></a>
+                            <a href="tg://msg_url?url=<?= url('blog/'.clinik_urlencode($parametrs['post']['url'])) ?>"><img width="25" src="<?= assets('public/app/img/02.webp') ?>" alt="ins"></a>
+                            <a href="https://eitaa.com/share/url?url=<?= url('blog/'.clinik_urlencode($parametrs['post']['url'])) ?>"><img width="25" src="<?= assets('public/app/img/04.png') ?>" alt="linkdin"></a>
+                            <a href="mailto:?subject=<?= $parametrs['post']['url'] ?>&body=این مقاله رو حتما چک کن:%20<?= url('blog/'.clinik_urlencode($parametrs['post']['url'])) ?>"><img width="20" src="<?= assets('public/app/img/03.png') ?>" alt="facebook"></a>
+                            <a href="whatsapp://send?text=<?= url('blog/'.clinik_urlencode($parametrs['post']['url'])) ?>"><img width="20" src="<?= assets('public/app/img/01.png') ?>" alt="facebook"></a>
                         </div>
                     </div>
                 </div>
@@ -95,11 +95,11 @@ if (count($parametrs['post']) >= 1) { ?>
                                 <span class="reat"><?= round($parametrs['post']['reat'], 1); ?></span>
                                 <small class="reat_num">(<?=$parametrs['post']['reat_num']; ?> نفر)</small>
                                 <div class="starBox df">
-                                    <span article="<?= $parametrs['post']['seo_title']; ?>" val="1"><i class="fas fa-star"></i></span>
-                                    <span article="<?= $parametrs['post']['seo_title']; ?>" val="2"><i class="fas fa-star"></i></span>
-                                    <span article="<?= $parametrs['post']['seo_title']; ?>" val="3"><i class="fas fa-star"></i></span>
-                                    <span article="<?= $parametrs['post']['seo_title']; ?>" val="4"><i class="fas fa-star"></i></span>
-                                    <span article="<?= $parametrs['post']['seo_title']; ?>" val="5"><i class="fas fa-star"></i></span>
+                                    <span article="<?= $parametrs['post']['url']; ?>" val="1"><i class="fas fa-star"></i></span>
+                                    <span article="<?= $parametrs['post']['url']; ?>" val="2"><i class="fas fa-star"></i></span>
+                                    <span article="<?= $parametrs['post']['url']; ?>" val="3"><i class="fas fa-star"></i></span>
+                                    <span article="<?= $parametrs['post']['url']; ?>" val="4"><i class="fas fa-star"></i></span>
+                                    <span article="<?= $parametrs['post']['url']; ?>" val="5"><i class="fas fa-star"></i></span>
                                 </div>
                             </div>
                         </div>

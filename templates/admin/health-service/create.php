@@ -7,9 +7,7 @@
             <label class="d-block mt-5">نوع خدمات</label>
             <select name="child_of" class="w-100 form-control mt-1">
                 <option value="0" selected > انتخاب نوع خدمات  </option>
-                <?php foreach($parametrs as $para_list) { ?>
-                    <option  value="<?=$para_list['id'] ?>"> <?=$para_list['title'] ?> </option>
-                <?php } ?>
+                <?= $parametrs ?>
             </select>
             <label class="d-block mt-5">عکس کناری </label>
             <input type="file" name="poster" class="w-100 form-control mt-1" />
@@ -19,6 +17,9 @@
             <label class="d-block mt-5">توضیحات</label>
             <textarea dir="rtl" name="content" class="editor" id="editor">
               </textarea>
+            <label class="d-block mt-5">  URL خدمات (از وارد کردن - در url خود داری نمایید)</label>
+            <input name="url" class="w-100 form-control mt-1 blog_input" placeholder="لطفا URL مقاله را وارد کنید" />
+
             <div class=" d-flex align-items-center justify-content-end">
                 <button  class="btn btn-success mt-5" style="margin-right:auto;" type="submit">افزودن خدمات</button>
             </div>

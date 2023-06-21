@@ -25,7 +25,7 @@
         <input name="surce" class="w-100 form-control mt-1 blog_input" placeholder="لطفا منبع مقاله را وارد کنید" />
         <label class="d-block mt-5">فایل مقاله (فقط فایل PDF)</label>
         <input type="file" name="pdf" class="w-100 form-control mt-1 blog_input" />
-        <label class="d-block mt-5">URL مقاله</label>
+        <label class="d-block mt-5">  URL مقاله (از وارد کردن - در url خود داری نمایید)</label>
         <input name="url" class="w-100 form-control mt-1 blog_input" placeholder="لطفا URL مقاله را وارد کنید" />
         <label class="d-block mt-5">عنوان سئو</label>
         <input name="seo_title" class="w-100 form-control mt-1 blog_input" placeholder="عنوان سئو مقاله را وارد کنید" />

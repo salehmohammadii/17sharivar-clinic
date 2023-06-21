@@ -80,7 +80,7 @@
                             <ul class="subMenu">
                                 <?php if (count($parametrs['paraclinics']) >= 1) {
                                     foreach ($parametrs['paraclinics'] as $para_clinic_List) { ?>
-                                        <li> <a href="<?= url('/paraclinic/'.urlencode( $para_clinic_List['title'])) ?>" class="subMenu_link"><?= $para_clinic_List['title'] ?></a></li>
+                                        <li> <a href="<?= url('/paraclinic/'.clinik_urlencode( $para_clinic_List['url'])) ?>" class="subMenu_link"><?= $para_clinic_List['title'] ?></a></li>
                                     <?php }
                                 } else { ?>
                                     <span class="page_msg">!هیچ موردی در سایت ثبت نشده است</span>
@@ -91,7 +91,7 @@
                             <ul class="subMenu">
                                 <?php if (count($parametrs['health_services']) >= 1) {
                                     foreach ($parametrs['health_services'] as $para_clinic_List) { ?>
-                                        <li> <a href="<?= url('/health-service/'.urlencode( $para_clinic_List['title'])) ?>" class="subMenu_link"><?= $para_clinic_List['title'] ?></a></li>
+                                        <li> <a href="<?= url('/health-service/'.clinik_urlencode( $para_clinic_List['url'])) ?>" class="subMenu_link"><?= $para_clinic_List['title'] ?></a></li>
                                     <?php }
                                 } else { ?>
                                     <span class="page_msg">!هیچ موردی در سایت ثبت نشده است</span>

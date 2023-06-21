@@ -9,23 +9,20 @@
             <label class="d-block mt-5">نوع پاراکلینیک</label>
             <select name="child_of" class="w-100 form-control mt-1">
                 <option value="0" selected > انتخاب نوع پاراکلینیک  </option>
-                <?php foreach($parametrs['all'] as $para_list) { ?>
-                    <option <?php if($parametrs['para']['child_of']==$para_list['id']){echo "selected";} ?>  value="<?=$para_list['id'] ?>"> <?=$para_list['title'] ?> </option>
-                <?php } ?>
+               <?= $parametrs['all']?>
             </select>
                 <label class="d-block mt-5">عکس کناری ( جهت استفاده از عکس قبلی فیلد را خالی رد کنید )</label>
             <input type="file" name="poster" class="w-100 form-control mt-1" />
-
                 <label class="d-block mt-5">عکس صفحه پاراکلینیک ( جهت استفاده از عکس قبلی فیلد را خالی رد کنید )</label>
-
             <input type="file" name="page_poster" class="w-100 form-control mt-1" />
             <label class="d-block mt-5">توضیحات</label>
             <textarea dir="rtl" name="content" class="editor" id="editor">
                   <?= $parametrs['para']['content'];?>
               </textarea>
+            <label class="d-block mt-5">  URL پاراکلینیک (از وارد کردن - در url خود داری نمایید)</label>
+            <input name="url" class="w-100 form-control mt-1 blog_input" value="  <?= $parametrs['para']['url'];?>" placeholder="لطفا URL پاراکلینیک  را وارد کنید" />
             <div class=" d-flex align-items-center justify-content-end">
                     <button  class="btn btn-success mt-5" style="margin-right:auto;" type="submit">ویرایش کردن بخش</button>
-
             </div>
         </div>
     </form>

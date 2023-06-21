@@ -23,11 +23,11 @@
                     <div class="span_box df">
                         <a href="<?= url('about-us') ?>">درباره ما</a>
                         <a href="<?= url('blog') ?>">بلاگ</a>
-                        <a href="<?= url('category/'.urlencode('اخبار')) ?>">اخبار</a>
+                        <a href="<?= url('category/'.clinik_urlencode('اخبار')) ?>">اخبار</a>
                     </div>
                     <div class="span_box df">
                         <a href="<?= url('faq') ?>">پرسش و پاسخ</a>
-                        <a href="<?= url('category/'.urlencode('آموزش')) ?>">آموزش</a>
+                        <a href="<?= url('category/'.clinik_urlencode('آموزش')) ?>">آموزش</a>
                         <a href="<?= url('blog') ?>">مقالات</a>
                     </div>
                     <div class="span_box df">

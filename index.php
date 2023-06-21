@@ -70,6 +70,15 @@ function toShamsi($date,$format='datetime'){
 return \Parsidev\Jalali\jDate::forge($date)->format($format);
 }
 
+function clinik_urlencode($url){
+    return str_replace(' ','-',$url);
+}
+
+function clinik_urldecode($url){
+    $url=urldecode($url);
+    return str_replace('-',' ',$url);
+
+}
 
 function protocol(): string
 {

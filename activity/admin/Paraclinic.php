@@ -11,18 +11,27 @@ class Paraclinic extends admin
     public function index()
     {
         $db = new database();
-        $paraclinics = $db->select('select  p.*,a.title as father_name,a.id as father_id from paraclinic as p left join paraclinic as a on 
-    p.child_of=a.id')->fetchAll();
-        $this->showpage("paraclinic/index.php", "مدیریت پاراکلینیک", $paraclinics);
+        $paraclinics = $db->select('select * from paraclinic order by child_of')->fetchAll();
+        $paraclinics=$this->get_array_of_childs($paraclinics);
+        $html='';
+        foreach ($paraclinics as $paraclinic){
+            $html.=$this->generate_table_of_childs($paraclinic);
+        }
+        $this->showpage("paraclinic/index.php", "مدیریت پاراکلینیک", $html);
     }
 
     public function create()
     {
         $db = new database();
-        $all_paraclinics = $db->select('select * from paraclinic')->fetchAll();
-        $this->showpage("paraclinic/create.php", "افزودن پاراکلینیک",$all_paraclinics);
-
+        $all_paraclinics = $db->select('select * from paraclinic order by child_of ')->fetchAll();
+        $paraclinics=$this->get_array_of_childs($all_paraclinics);
+        $html='';
+        foreach ($paraclinics as $paraclinic){
+            $html.=$this->generate_dropdown_options($paraclinic);
+        }
+        $this->showpage("paraclinic/create.php", "افزودن پاراکلینیک",$html);
     }
+
 
     public function store($request)
     {
@@ -36,6 +45,15 @@ class Paraclinic extends admin
         } else {
             $request['page_poster'] = $this->saveimage($request['page_poster'], 'setting');
         }
+        $db=new database();
+        $para=$db->select('select * from paraclinic where url=?',[$request['url']])->fetch();
+        if ($para!=false){
+            $i=1;
+            while ($para!=false){
+                $request['url']=$request['url'].' '.$i;
+                $para=$db->select('select * from paraclinic where url=?',[$request['url']])->fetch();
+            }
+        }
         $fields = [];
         $values = [];
         foreach ($request as $key => $value) {
@@ -44,7 +62,6 @@ class Paraclinic extends admin
                 $values[] = $value;
             }
         }
-        $db=new database();
         $db->create('paraclinic',$fields,$values);
         $this->redirect("admin/paraclinic?action=true");
     }
@@ -62,9 +79,13 @@ class Paraclinic extends admin
         $db = new database();
         $paraclinic = $db->select('select p.*,a.title as father_name,a.id as father_id from paraclinic as p left join paraclinic as a on 
     p.child_of=a.id  where  p.id=?', [$id])->fetch();
-        $all_paraclinics = $db->select('select * from paraclinic where id!=?',[$paraclinic['id']])->fetchAll();
-
-        $this->showpage("paraclinic/edit.php", "ویرایش پاراکلینیک",['all'=>$all_paraclinics,'para'=> $paraclinic] );
+        $all_paraclinics = $db->select('select * from paraclinic order by child_of ')->fetchAll();
+        $paraclinics=$this->get_array_of_childs($all_paraclinics);
+        $html='';
+        foreach ($paraclinics as $para){
+            $html.=$this->generate_dropdown_options($para,$paraclinic['child_of']);
+        }
+        $this->showpage("paraclinic/edit.php", "ویرایش پاراکلینیک",['all'=>$html,'para'=> $paraclinic] );
     }
 
     public function update($request, $id)
@@ -79,6 +100,15 @@ class Paraclinic extends admin
         } else {
             $request['page_poster'] = $this->saveimage($request['page_poster'], 'setting');
         }
+        $db=new database();
+        $para=$db->select('select * from paraclinic where url=?',[$request['url']])->fetch();
+        if ($para!=false){
+            $i=1;
+            while ($para!=false){
+                $request['url']=$request['url'].' '.$i;
+                $para=$db->select('select * from paraclinic where url=?',[$request['url']])->fetch();
+            }
+        }
         $fields = [];
         $values = [];
         foreach ($request as $key => $value) {
@@ -92,4 +122,7 @@ class Paraclinic extends admin
         $this->redirect("admin/paraclinic?action=true");
 
     }
+
+
+
 }

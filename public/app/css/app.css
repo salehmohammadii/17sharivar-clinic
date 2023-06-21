@@ -604,10 +604,10 @@ position: relative;
 /*---------------------- Paraclinic Box  code start------------ */
 .Paraclinic {
 position: relative;
-    height: 84rem;
-    background-image: url(../img/Untitled-1.svg);
-    background-size: cover;
+background-color:#dcdfe0;
+background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 50px;
 }
 .Paraclinic_title {
     font-size: 2.2rem;

@@ -38,7 +38,7 @@ class FAQ extends home
 
     public function paraclinic($title)
     {
-        $title = urldecode($title);
+        $title = clinik_urldecode($title);
         $paraclinics = $this->db->select('select * from paraclinic ')->fetchAll();
         $paraclinic = $this->db->select('select * from paraclinic where title=?', [$title])->fetch();
         $fathers = $this->get_fathers($paraclinics, $paraclinic['child_of']);

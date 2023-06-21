@@ -188,7 +188,7 @@
                                                 <span class="text-dark fw-bolder text-hover-primary fs-6"><?= $new_user_item['full_name']; ?></span>
                                             </td>
                                             <td>
-                                                <span class="text-dark fw-bolder text-hover-primary d-block fs-6"><?= $new_user_item['skill']; ?></span>
+                                                <span class="text-dark fw-bolder text-hover-primary d-block fs-6"><?= $new_user_item['sk_title']; ?></span>
                                             </td>
                                             <td>
                                                 <span class="text-muted me-2 fs-7 fw-bold"> <?= $new_user_item['personalCode']; ?></span>

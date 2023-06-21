@@ -11,22 +11,31 @@ class HealthServices extends admin
     public function index()
     {
         $db = new database();
-        $users = $db->select('select p.*,a.title as father_name,a.id as father_id from health_ser as p left join health_ser as a on 
-    p.child_of=a.id')->fetchAll();
-        $this->showpage("health-service/index.php", "مدیریت خدمات درمانی", $users);
+        $paraclinics = $db->select('select * from health_ser order by child_of')->fetchAll();
+        $paraclinics=$this->get_array_of_childs($paraclinics);
+        $html='';
+        foreach ($paraclinics as $paraclinic){
+            $html.=$this->generate_table_of_childs($paraclinic);
+        }
+        $this->showpage("health-service/index.php", "مدیریت خدمات درمانی", $html);
     }
 
     public function create()
     {
         $db = new database();
-        $all_paraclinics = $db->select('select * from health_ser')->fetchAll();
-        $this->showpage("health-service/create.php", "افزودن خدمات درمانی",$all_paraclinics);
+        $all_paraclinics = $db->select('select * from health_ser order by child_of ')->fetchAll();
+        $paraclinics=$this->get_array_of_childs($all_paraclinics);
+        $html='';
+        foreach ($paraclinics as $paraclinic){
+            $html.=$this->generate_dropdown_options($paraclinic);
+        }
+        $this->showpage("health-service/create.php", "افزودن خدمات درمانی",$html);
 
     }
 
     public function store($request)
     {
-        if (empty($request['poster']['name'])) {
+      if (empty($request['poster']['name'])) {
             $this->redirect("admin/health-service?action=0");
         } else {
             $request['poster'] = $this->saveimage($request['poster'], 'setting');
@@ -36,6 +45,15 @@ class HealthServices extends admin
         } else {
             $request['page_poster'] = $this->saveimage($request['page_poster'], 'setting');
         }
+        $db=new database();
+        $para=$db->select('select * from health_ser where url=?',[$request['url']])->fetch();
+        if ($para!=false){
+            $i=1;
+            while ($para!=false){
+                $request['url']=$request['url'].' '.$i;
+                $para=$db->select('select * from health_ser where url=?',[$request['url']])->fetch();
+            }
+        }
         $fields = [];
         $values = [];
         foreach ($request as $key => $value) {
@@ -44,7 +62,6 @@ class HealthServices extends admin
                 $values[] = $value;
             }
         }
-        $db=new database();
         $db->create('health_ser',$fields,$values);
         $this->redirect("admin/health-service?action=true");
     }
@@ -62,8 +79,13 @@ class HealthServices extends admin
         $db = new database();
         $paraclinic = $db->select('select p.*,a.title as father_name,a.id as father_id from health_ser as p left join health_ser as a on 
     p.child_of=a.id  where  p.id=?', [$id])->fetch();
-        $all_paraclinics = $db->select('select * from health_ser where id!=?',[$paraclinic['id']])->fetchAll();
-        $this->showpage("health-service/edit.php", "ویرایش خدمات درمانی",['all'=>$all_paraclinics,'para'=> $paraclinic] );
+        $all_paraclinics = $db->select('select * from paraclinic order by child_of ')->fetchAll();
+        $paraclinics=$this->get_array_of_childs($all_paraclinics);
+        $html='';
+        foreach ($paraclinics as $para){
+            $html.=$this->generate_dropdown_options($para,$paraclinic['child_of']);
+        }
+        $this->showpage("health-service/edit.php", "ویرایش خدمات درمانی",['all'=>$html,'para'=> $paraclinic] );
     }
 
     public function update($request, $id)
@@ -80,6 +102,15 @@ class HealthServices extends admin
         }
         $fields = [];
         $values = [];
+        $db=new database();
+        $para=$db->select('select * from health_ser where url=?',[$request['url']])->fetch();
+        if ($para!=false){
+            $i=1;
+            while ($para!=false){
+                $request['url']=$request['url'].' '.$i;
+                $para=$db->select('select * from health_ser where url=?',[$request['url']])->fetch();
+            }
+        }
         foreach ($request as $key => $value) {
             if ($value != '') {
                 $fields[] = $key;

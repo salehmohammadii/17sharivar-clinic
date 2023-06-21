@@ -202,7 +202,7 @@
                                     <img src="<?=assets( $para_clinic_List['poster']) ?>" width="75" alt="Paraclinic_item photo">
                                     <h4><?= $para_clinic_List['title'] ?></h4>
                                     <p> <?= substr($para_clinic_List['content'], 0, 120)  ?> </p>
-                                    <a href="<?= url('paraclinic/'.urlencode( $para_clinic_List['title']))  ?>" class="learn_more1 learn_more3"> بیشتر بدانید <i class="fas fa-angle-left"></i></a>
+                                    <a href="<?= url('paraclinic/'.clinik_urlencode( $para_clinic_List['url']))  ?>" class="learn_more1 learn_more3"> بیشتر بدانید <i class="fas fa-angle-left"></i></a>
                                 </div>
                             <?php }
                         } else { ?>
@@ -273,9 +273,9 @@
                 <?php foreach ($parametrs['articles'] as $article) { ?>
                 <div class="col-12 col-md-12 col-lg-4" >
                     <div class="blog_body">
-                        <a href="<?= url('blog/'.urlencode($article['seo_title'])) ; ?>">   <img class="blog_img" src="<?= assets( $article['poster']); ?>" alt="blog_photo"></a>
+                        <a href="<?= url('blog/'.clinik_urlencode($article['url'])) ; ?>">   <img class="blog_img" src="<?= assets( $article['poster']); ?>" alt="blog_photo"></a>
                         <div class="Blog_contentBox">
-                            <a href="<?= url('blog/'.urlencode($article['seo_title'])) ; ?>"><?= $article['title']; ?></a>
+                            <a href="<?= url('blog/'.clinik_urlencode($article['url'])) ; ?>"><?= $article['title']; ?></a>
                             <div class="sub_infoBog">
                                 <div class="sub_infoBlog_p1">
                                     <span>مقاله<img width="23" src="<?=assets('public/app/img/blog_vector.png')?>" alt="blog_vector"></span>
@@ -289,7 +289,7 @@
                         </div>
 
                     </div>
-                    <a class=" learn_more1 learn_more_blog" href="<?= url('blog/'.urlencode($article['seo_title'])) ; ?>">بیشتر بخوانید<i class=" fas fa-angle-left"></i> </a>
+                    <a class=" learn_more1 learn_more_blog" href="<?= url('blog/'.clinik_urlencode($article['url'])) ; ?>">بیشتر بخوانید<i class=" fas fa-angle-left"></i> </a>
 
                 </div>
                 <?php } ?>
