@@ -1,5 +1,5 @@
 <div class="card-body py-3 h-100">
-    <a class=" text-white  btn-primary px-3 py-2 w-100px d-block ms-auto text-center me-5" style="border-radius: 5px;" href="new-doctor">افزودن پزشک  </a>
+    <a class=" text-white  btn-primary px-3 py-2 w-100px d-block ms-auto text-center me-5" style="border-radius: 5px;" href="<?= url('admin/doctor/create') ?>">افزودن پزشک  </a>
     <!--begin::Table container-->
     <div class="table-responsive h-100">
         <!--begin::Table-->
