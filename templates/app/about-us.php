@@ -1,3 +1,6 @@
+
+<link rel="stylesheet" href="<?= assets('public/app/css/splide.min.css')?>">
+
 <section>
     <div class="container darokhane2 About_title">
         <div class="row">
