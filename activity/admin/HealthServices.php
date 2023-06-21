@@ -13,14 +13,14 @@ class HealthServices extends admin
         $db = new database();
         $users = $db->select('select p.*,a.title as father_name,a.id as father_id from health_ser as p left join health_ser as a on 
     p.child_of=a.id')->fetchAll();
-        $this->showpage("health-service/index.php", "manage health service", $users);
+        $this->showpage("health-service/index.php", "مدیریت خدمات درمانی", $users);
     }
 
     public function create()
     {
         $db = new database();
         $all_paraclinics = $db->select('select * from health_ser')->fetchAll();
-        $this->showpage("health-service/create.php", "add paraclinic",$all_paraclinics);
+        $this->showpage("health-service/create.php", "افزودن خدمات درمانی",$all_paraclinics);
 
     }
 
@@ -63,7 +63,7 @@ class HealthServices extends admin
         $paraclinic = $db->select('select p.*,a.title as father_name,a.id as father_id from health_ser as p left join health_ser as a on 
     p.child_of=a.id  where  p.id=?', [$id])->fetch();
         $all_paraclinics = $db->select('select * from health_ser where id!=?',[$paraclinic['id']])->fetchAll();
-        $this->showpage("health-service/edit.php", "Edit health service",['all'=>$all_paraclinics,'para'=> $paraclinic] );
+        $this->showpage("health-service/edit.php", "ویرایش خدمات درمانی",['all'=>$all_paraclinics,'para'=> $paraclinic] );
     }
 
     public function update($request, $id)
