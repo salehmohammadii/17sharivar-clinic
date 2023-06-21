@@ -123,6 +123,38 @@ class Paraclinic extends admin
 
     }
 
+    protected function  generate_table_of_childs($node, $dept=0) {
+        $indent=str_repeat('-',$dept);
+        if (!isset($node['children'])){
+            $node['children']=[];
+        }
+        if (isset($node['id'])) {
+            $html = '<tr class=" text-center">
+                            <td class=" text-info">
+                                '.$node['id'].'
+                            </td>
+                            <td>
+                                <span class="text-dark fw-bolder text-hover-primary fs-6">'.$indent.$node['title'].'</span>
+                            </td>
+                            <td>
+                                <span class="text-dark fw-bolder text-hover-primary d-block fs-6">'.toShamsi( $node['created_at']).'</span>
+                            </td>
+                            <td>
+                                <textarea class=" mw-300px w-300px"> '.$node['content'].'</textarea>
+                            </td>
+                            <td>
+                                <a class="btn-danger py-1 px-4 text-white" href="'.url("admin/paraclinic/delete/".$node['id'])  .'">حذف</a>
+                                <a class="btn-primary py-1 px-4 text-white" href="'. url('admin/paraclinic/edit/'.$node['id']) .'">ویرایش</a>
+                            </td>
+                        </tr>';
+        }else{
+            $html='';
+        }
+        foreach ($node['children'] as $child) {
+            $html .= $this->generate_table_of_childs($child, $dept + 1);
+        }
+        return $html;
+    }
 
 
 }
