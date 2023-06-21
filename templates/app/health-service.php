@@ -37,15 +37,15 @@
         <div class="container no-ower-flow">
             <div class="row para_boxs">
                         <div class="col-12 p_img" id="subject">
-                            <div class="paraclinic_bo df">
+                            <div class="paraclinic_box df">
                                 <h2>
                                     <?= $parametrs['health_service']['title'] ?>
                                 </h2>
-                                <div class="paraBox df">
+
                                     <img width="150" 
                                     src="<?= assets( $parametrs['health_service']['page_poster']) ?>" alt="title_logo">
                                      <?= $parametrs['health_service']['content'] ?>
-                                </div>
+
                             </div>
                         </div>
             </div>
