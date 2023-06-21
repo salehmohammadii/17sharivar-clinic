@@ -72,7 +72,7 @@ if ($id!=null) {
 }else{
     $result=$stmt->execute(array_filter(array_values($values)));
 }
-
+dd($query);
 return true;
     }catch (PDOException $e){
 echo $e->getMessage();
