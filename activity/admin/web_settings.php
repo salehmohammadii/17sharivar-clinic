@@ -67,8 +67,10 @@ class web_settings extends admin  {
     {
         $db=new database();
         $about= $db->select('select * from settings where page_key=?',['charity'])->fetch();
-        $about=$about['value']??'';
-        $this->showpage("web-settings/pages.php","داروخانه",['content'=>$about,'page_title'=>'charity']);
+        $about=json_decode($about['value'],true);
+        $content=$about['content']??'';
+        $url=$about['url']??'';
+        $this->showpage("web-settings/charity.php","خیریه",['content'=>$content,'page_title'=>'charity','url'=>$url]);
     }
     public function store_page($request,$page)
     {
@@ -80,5 +82,14 @@ class web_settings extends admin  {
             $db->create('settings',['value','page_key'],[$request['content'],$page]);
         }
         $this->redirect('admin/'.$page.'?action=true');
+    }
+
+    public function store_charity($request)
+    {
+        $db=new database();
+        $request=json_encode($request);
+        $db->update('settings',['value'],[$request],'page_key','charity');
+        $this->redirect('admin/charity'.'?action=true');
+
     }
 }
