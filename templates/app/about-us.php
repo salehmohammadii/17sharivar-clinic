@@ -78,3 +78,5 @@
 <div className="scroll-to-top">
             <span class="btn"><i class="fas fa-chevron-up"></i></i>
 </div>
+
+<script src="<?= assets('public/app/js/splide.min.js') ?>"></script>

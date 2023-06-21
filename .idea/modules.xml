@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/17shahrivar.iml" filepath="$PROJECT_DIR$/.idea/17shahrivar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../clinik-def/.idea/Project-Karlancer.iml" filepath="$PROJECT_DIR$/../clinik-def/.idea/Project-Karlancer.iml" />
     </modules>
   </component>
 </project>
