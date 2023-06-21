@@ -32,10 +32,7 @@ left join skills on users.skill=skills.id')->fetchAll();
         $id = $request['user_id'];
         $day = $request['weekDay'];
         $db=new database();
-
         $user = $db->select("SELECT $day FROM presentday WHERE user_id=?",[$id])->fetch();
-
-        if (count($user) >= 1) {
             if ($user[$day] == 1) {
                 $x = 0;
             } else {
@@ -43,7 +40,6 @@ left join skills on users.skill=skills.id')->fetchAll();
             }
             $db->update('presentday',[$day],[$x],'user_id',$id);
                 echo "ok";
-            }
         }
 
     public function update_weekday_ontime($request){
