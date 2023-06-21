@@ -34,6 +34,7 @@ class MainPage extends home
     {
         $content=$this->db->select("select * from settings where page_key='about'")->fetch();
         $doctors=$this->db->select("select u.*,s.title as sk_title from users as u left join skills s on u.skill = s.id where u.roll=2 ")->fetchAll();
+        $doctors=array_splice($doctors,0,3);
         $this->showpage('about-us.php','درباره ما',array_merge($this->get_general_info(),['content'=>$content['value'],'doctors'=>$doctors]));
     }
 
