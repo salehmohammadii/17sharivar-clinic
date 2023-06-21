@@ -76,9 +76,11 @@ class MainPage extends home
     }
     public function charity()
     {
-        $content=$this->db->select("select * from settings where page_key='charity'")->fetch();
-        $content=$content['value']??'';
-        $this->showpage('charity.php','خیریه',array_merge(['content'=>$content],$this->get_general_info()));
+        $charity=$this->db->select("select * from settings where page_key='charity'")->fetch();
+        $charity=json_decode($charity['value'],true);
+        $content=$charity['content']??'';
+        $url=$charity['url']??'#';
+        $this->showpage('charity.php','خیریه',array_merge(['content'=>$content,'url'=>$url],$this->get_general_info(),));
     }
     public function drug_store()
     {
