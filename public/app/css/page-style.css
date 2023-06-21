@@ -1564,6 +1564,11 @@ background-position: right center;
     text-align: center;
     padding: 2rem 0;
 }
+
+#charity-pay{
+    margin-bottom: 30px !important;
+}
+
 .terms-and-rules h2{
 font-size: 1.8rem;
 display: block;
