@@ -13,14 +13,14 @@ class Paraclinic extends admin
         $db = new database();
         $paraclinics = $db->select('select  p.*,a.title as father_name,a.id as father_id from paraclinic as p left join paraclinic as a on 
     p.child_of=a.id')->fetchAll();
-        $this->showpage("paraclinic/index.php", "manage paraclinic", $paraclinics);
+        $this->showpage("paraclinic/index.php", "مدیریت پاراکلینیک", $paraclinics);
     }
 
     public function create()
     {
         $db = new database();
         $all_paraclinics = $db->select('select * from paraclinic')->fetchAll();
-        $this->showpage("paraclinic/create.php", "add paraclinic",$all_paraclinics);
+        $this->showpage("paraclinic/create.php", "افزودن پاراکلینیک",$all_paraclinics);
 
     }
 
@@ -64,7 +64,7 @@ class Paraclinic extends admin
     p.child_of=a.id  where  p.id=?', [$id])->fetch();
         $all_paraclinics = $db->select('select * from paraclinic where id!=?',[$paraclinic['id']])->fetchAll();
 
-        $this->showpage("paraclinic/edit.php", "Edit paraclinic",['all'=>$all_paraclinics,'para'=> $paraclinic] );
+        $this->showpage("paraclinic/edit.php", "ویرایش پاراکلینیک",['all'=>$all_paraclinics,'para'=> $paraclinic] );
     }
 
     public function update($request, $id)
