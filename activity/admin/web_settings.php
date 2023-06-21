@@ -45,7 +45,7 @@ class web_settings extends admin  {
     {
         $db=new database();
         $parametrs=$db->select('select * from settings where id=1')->fetch();
-        $parametrs=json_decode($parametrs,true);
+        $parametrs=json_decode($parametrs['value'],true);
         $this->showpage("web-settings/main-page.php","صفحه اصلی",$parametrs);
     }
 
