@@ -369,6 +369,7 @@ uri("admin/drugstore","admin\web_settings","drugstore");
 uri("admin/charity","admin\web_settings","charity");
 uri("admin/main-page","admin\web_settings","main_page");
 uri("admin/web-settings/page_store/{id}","admin\web_settings","store_page","POST");
+uri("admin/web-settings/store-charity","admin\web_settings","store_charity","POST");
 
 
 //auth
