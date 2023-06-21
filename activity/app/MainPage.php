@@ -53,7 +53,6 @@ class MainPage extends home
         $title=urldecode($title);
         $paraclinics= $this->db->select('select * from paraclinic ')->fetchAll();
         $paraclinic= $this->db->select('select * from paraclinic where title=?',[$title])->fetch();
-        dd($title);
         $fathers=$this->get_fathers($paraclinics,$paraclinic['child_of']);
         $childs=$this->db->select('select * from paraclinic where child_of=?',[$paraclinic['id']])->fetchAll();
         $this->showpage('paraclinic.php',$title,array_merge($this->get_general_info(),[
