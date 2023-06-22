@@ -1,7 +1,7 @@
 
     <?php /** @var array $parametrs */
 
-if(count($parametrs['message'])>=1 && $parametrs['message']['reply'] !="") {?>
+if(isset($parametrs['message']['replay_to'])) {?>
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -12,7 +12,7 @@ if(count($parametrs['message'])>=1 && $parametrs['message']['reply'] !="") {?>
                         </div>
                         <div class="mains">
                             <h2>متن پاسخ</h2>
-                            <p><?= $parametrs['message']['replay']; ?></p>
+                            <p><?= $parametrs['message']['replay_to']; ?></p>
                         </div>
 
                     </div>
