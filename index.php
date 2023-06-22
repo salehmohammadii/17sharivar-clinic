@@ -421,6 +421,7 @@ uri("terms",'app\MainPage',"terms");
 uri("privacy-policy",'app\MainPage',"privacy");
 uri("charity",'app\MainPage',"charity");
 uri("drug-store",'app\MainPage',"drug_store");
+uri("doctors",'app\MainPage',"doctors");
 
 //contact-us
 uri("contact-us",'app\ContactUs',"index");

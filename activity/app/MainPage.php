@@ -103,4 +103,10 @@ class MainPage extends home
             array_merge($this->get_general_info(),['all_paras'=>$paras]));
     }
 
+    public function doctors()
+    {
+     $doctors=$this->db->select('select users.*,s.title as sk_title from users left join skills s on users.skill = s.id  where roll=2')->fetchAll();
+     $this->showpage('doctors.php','پزشکان',array_merge($this->get_general_info(),['posts'=>$doctors]));
+    }
+
 }
