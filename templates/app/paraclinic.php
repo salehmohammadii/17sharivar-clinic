@@ -52,7 +52,7 @@
 
 <?php if (count($parametrs['childs']) >= 1) { ?>
 <section>
-    <div class="container Paraclinic">
+    <div class="container Paraclinic2">
         <div class="row">
             <div class="col-12">
                 <h4 class="Paraclinic_title">زیر مجموعه ها</h4>
