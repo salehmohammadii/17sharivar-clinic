@@ -1,6 +1,6 @@
 
     <?php /** @var array $parametrs */
-    dd($parametrs);
+
 if(count($parametrs['message'])>=1 && $parametrs['message']['reply'] !="") {?>
         <div class="container">
             <div class="row">
