@@ -39,20 +39,11 @@
                                 </div>
                                 <h2><?= $articles_List['full_name']; ?></h2>
                                 <span><?= $articles_List['resume']; ?> </span>
-
                             </div>
                         <?php } ?>
                         <?php } ?>
                     </div>
                 </div>
-                <div class="col-12 mt-5">
-                    <?php if (flash('all_blog')=='false') { ?>
-                        <a href="../site/blogs?all=true" class=" learn_more1 learn_more5"> مشاهده بیشتر <i class=" fas fa-chevron-down"></i> </a>
-                    <?php } else { ?>
-                        <a href="../site/blogs" class=" learn_more1 learn_more5"> مشاهده کمتر <i class=" fas fa-chevron-down"></i> </a>
-                    <?php } ?>
-                </div>
-
             </div>
         </div>
     </section>
