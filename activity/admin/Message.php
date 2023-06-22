@@ -39,7 +39,7 @@ class  Message extends admin
            } else {
             $request['file'] = 'nofile';
         }
-        $db->update('contact',['replay','file','link'],[$content,$request['file'],$randstring],'id',$id,'reaplay_date');
+        $db->update('contact',['replay_to','file','link'],[$content,$request['file'],$randstring],'id',$id,'reaplay_date');
         send_message($user['phone'], "کاربر گرامی پیام شما پاسخ داده شد \n مشاهده پاسخ در لینک: " . $link);
         $this->redirect('admin/messages?action=true');
     }
