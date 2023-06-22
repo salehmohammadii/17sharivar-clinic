@@ -11,9 +11,10 @@ class MainPage extends home
     public function index()
     {
         $articles=$this->get_articles(3);
+        $paraclinic_list=$this->get_paraclinics(0);
         $slides=$this->get_slides();
         $sliders=$this->get_sliders();
-        $parametrs=array_merge($this->get_general_info(),['articles'=>$articles,'slide'=>$slides,'slider'=>$sliders]);
+        $parametrs=array_merge($this->get_general_info(),['all_para'=>$paraclinic_list,'articles'=>$articles,'slide'=>$slides,'slider'=>$sliders]);
         $this->showpage("index.php", "کلینیک 17 شهریور", $parametrs);
     }
 

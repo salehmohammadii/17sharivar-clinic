@@ -196,8 +196,8 @@
                 <div class="col-12">
                     <h4 class="Paraclinic_title">پاراکلینیکــ</h4>
                     <div class="Paraclinic_items df">
-                        <?php  if (count( $parametrs['paraclinics']) >= 1) {
-                            foreach ( $parametrs['paraclinics'] as $para_clinic_List) { ?>
+                        <?php  if (count( $parametrs['all_para']) >= 1) {
+                            foreach ( $parametrs['all_para'] as $para_clinic_List) { ?>
                                 <div class="Paraclinic_item wow animate__animated  animate__fadeInDown ">
                                     <img src="<?=assets( $para_clinic_List['poster']) ?>" width="75" alt="Paraclinic_item photo">
                                     <h4><?= $para_clinic_List['title'] ?></h4>
