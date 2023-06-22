@@ -41,7 +41,6 @@
     <link rel="stylesheet" href="<?= assets('public/app/css/grid.css')?>">
     <link rel="stylesheet" href="<?= assets('public/app/css/app.css') ?>">
     <link rel="stylesheet" href="<?= assets('public/app/css/user.css')  ?>">
-
     <link rel="stylesheet" href="<?= assets('public/app/css/hepler-css.css') ?>">
     <link rel="stylesheet" href="<?= assets('public/app/css/responsive.css') ?>">
     <link rel="stylesheet" href="<?= assets('public/app/css/slider.css') ?>">

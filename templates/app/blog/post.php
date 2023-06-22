@@ -140,48 +140,10 @@ if (count($parametrs['post']) >= 1) { ?>
             <div class="d-flex justify-content-center">
                 <div class=" user_commentsBox w-100">
                     <div>
-                        <?php if (count($parametrs['comments']) >= 1) { ?>
+                        <?php if (strlen($parametrs['comments']) >= 1) { ?>
                             <div  class=" w-100">
                                 <div class="" >
-                                    <?php foreach ($parametrs['comments'] as $comments_item) {
-                                        $date="<span direction='ltr' dir='ltr' style='direction: rtl'>".toShamsi($comments_item['created_at'])."</span>";
-                                        ?>
-                                            <div class="cmmBox">
-                                                <div class=" commentBox_item w-100">
-                                                    <img  src="<?= assets('public/app/img/vector.png') ?>" alt="">
-                                                    <div class="box3">
-                                                        <div class="box3_part1" dir="ltr">
-                                                            <span data-id="<?=$comments_item['id'] ?>" class="replay_btn">پاسخ </span>
-
-                                                            <small>
-
-                                                                :<?= $comments_item['name']. " در تاریخ :  " . $date ."  گفت  "; ?>
-                                                            </small>
-                                                        </div>
-                                                        <div class="box3_part2">
-                                                            <p><?= $comments_item['content']; ?></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <?php foreach($comments_item['replies'] as $comments_replay_item){
-                                                    $date="<span direction='ltr' dir='ltr' style='direction: rtl'>".toShamsi($comments_replay_item['created_at'])."</span>";
-                                                    ?>
-                                                    <div class=" commentBox_item commentBox_item2">
-                                                        <img  src="<?= assets('public/app/img/vector.png') ?>" alt="">
-                                                        <div class="box3">
-                                                            <div class="box3_part1" dir="ltr">
-                                                                <span></span>
-                                                                <small > :<?= $comments_replay_item['name']. " در تاریخ :  " . $date ."  پاسخ داد  "; ?></small>
-                                                            </div>
-                                                            <div class="box3_part2">
-                                                                <p><?= $comments_replay_item['content']; ?></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                <?php } ?>
-                                            </div>
-                                        <?php
-                                    } ?>
+                                    <?= $parametrs['comments'] ?>
                                 </div>
                             </div>
                         <?php } else { ?>

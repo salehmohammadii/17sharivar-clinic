@@ -16,7 +16,6 @@ class Comment extends home
        if ($parent_comment!=false){
         $this->db->update('comments',['reply_count'],[$parent_comment['reply_count']+1],'id',$parent_comment['id'],'n');
         $this->db->create('comments',['content','name','for_Article','replay_to'],[$comment,'کاربر مهمان',$parent_comment['for_Article'],$parent_comment['id']]);
-
        }
         $this->redirectback();
     }

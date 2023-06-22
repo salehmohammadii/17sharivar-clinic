@@ -19,7 +19,7 @@
                     <td><?= $comments_item['name']; ?></td>
                     <td><?= $comments_item['phone']; ?></td>
                     <td dir="ltr"><?= toShamsi( $comments_item['created_at']); ?></td>
-                    <td ><?= $comments_item['for_Article']; ?></td>
+                    <td ><?= $comments_item['a_title']; ?></td>
                     <td ><span><?= $comments_item['content']; ?></span></td>
                     <td>
                         <a class=" btn-danger py-1 px-4 text-white" href="<?= url('admin/comments/delete/'.$comments_item['id']) ; ?>">حذف</a>

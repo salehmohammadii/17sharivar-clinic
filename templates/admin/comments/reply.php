@@ -14,14 +14,17 @@
             </div>
             <!--end::Modal header-->
             <!--begin::Modal body-->
-
-
             <div class="modal-body scroll-y m-5">
                 <p class="h3 p-2">نام: <?= $parametrs['name'] ?></p>
                 <p class="h3 p-2">شماره تماس: <?= $parametrs['phone'] ?></p>
                 <p class="h3 p-2">زمان: <?= toShamsi( $parametrs['created_at']) ?></p>
                 <p class="h3 p-2">متن پیام: <?= $parametrs['content'] ?></p>
+                <?php
 
+                if(!empty($parametrs['d_content'])){
+                    echo '<p class="h3 p-2">پاسخ به:  '.$parametrs['d_content'] .'</p>';
+                }
+                ?>
                 <form method="post" action="<?= url('admin/comments/store/'.$parametrs['id']) ?>" class="mb-3 mb-lg-5 p-10" enctype="multipart/form-data">
                     <div class="inputBox w-100">
                         <label class="d-block">نام نمایشی</label>
