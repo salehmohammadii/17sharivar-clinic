@@ -201,7 +201,7 @@ a {
     font-size: 2rem;
 }
 .Paraclinic_btn {
- 
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -209,14 +209,12 @@ a {
 .Paraclinic_btn svg{
     color: #050505 ;
 }
-.Paraclinic_btn:hover svg {
-    color: #fff !important;
-}
+
 .subMenu {
     position: absolute;
     top: 4.2rem;
     background-color: #fff;
-    width: 25rem;
+    width: max-content;
     padding: 0.2rem 0;
     z-index: 900000000000000;
     line-height: 2;
@@ -227,15 +225,109 @@ a {
     -ms-border-radius: 0.5rem;
     -o-border-radius: 0.5rem;
     display: none;
-    overflow: auto;
 }
 .subMenu::-webkit-scrollbar {
     width: 0.5rem !important;
     background-color: #05050517;
 }
-.Paraclinic_btn:hover .subMenu {
+
+
+
+
+
+/**/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 10px;
+}
+
+.subMenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.subMenu li {
+    position: relative;
+}
+
+.subMenu li a {
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.subMenu li ul {
+    background-color: #fff;
+    width: max-content;
+    padding: 0.2rem 0;
+    z-index: 900000000000000;
+    line-height: 2;
+    box-shadow: 0 0 0.5rem #0505053d;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    right: 100%;
+    list-style: none;
+    display: none;
+    line-height: normal;
+    background-color: #fff;
+
+}
+
+.subMenu li ul li a {
+    text-align: left;
+    font-size: 14px;
+    padding: 10px;
+    display: block;
+    white-space: nowrap;
+}
+
+.subMenu li ul li a:hover {
+    background-color: #fff;
+
+}
+
+.subMenu li ul li ul {
+    left: 100%;
+    top: 0;
+}
+
+ul li:hover>a {
+    background-color: #fff;
+
+}
+
+ul li:hover>ul {
     display: block;
 }
+/**/
+
+
+
+
+
+
+
+
+
+
+
 .subMenu::-webkit-scrollbar-thumb {
     background-color: #0D447A;
     border-radius: 5rem;
@@ -837,7 +929,7 @@ background-size: cover;
 /*------------------------ footer code end -------------------------*/
 .footer {
     background-color: #0D447A;
-	
+
 }
 .footer * {
     z-index: 90000;

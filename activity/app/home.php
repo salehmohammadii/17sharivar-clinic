@@ -29,8 +29,52 @@ class home
 
     public function get_general_info()
     {
-        return ['paraclinics' => $this->get_paraclinics(0), 'settings' => $this->get_site_settings(), 'health_services' => $this->get_health_services(0)];
+        $paraclinics=$this->get_all_paraclinics();
+        $paraclinics=$this->get_array_of_childs($paraclinics);
+        $paraclinics=$this->buildMenu($paraclinics,'paraclinic');
+
+        $health=$this->get_all_health_services();
+        $health=$this->get_array_of_childs($health);
+        $health=$this->buildMenu($health,'health-service');
+        return ['paraclinics' => $paraclinics, 'settings' => $this->get_site_settings(), 'health_services' => $health];
     }
+
+    function get_array_of_childs(array &$elements, $parentId = 0)
+    {
+        $branch = array();
+        foreach ($elements as &$element) {
+            if ($element['child_of'] == $parentId) {
+                $children = $this->get_array_of_childs($elements, $element['id']);
+                if ($children) {
+                    $element['children'] = $children;
+                }
+                $branch[$element['id']] = $element;
+
+                unset($element);
+            }
+        }
+        return $branch;
+    }
+
+    function buildMenu($items,$url) {
+        $output = "<ul>";
+        foreach ($items as $item) {
+            $output .= "<li>";
+            if (!empty($item['children'])){
+                $icon='<i class=" fas fa-chevron-down " style="color: #000;"></i>';
+            }else{
+                $icon='';
+            }
+            $output .= "<a href='".url($url.'/'.clinik_urlencode( $item['url']))."'>{$item['title']} ".$icon."</a>";
+            if (!empty($item['children'])) {
+                $output .=$this->buildMenu($item['children'],$url); // recursively build sub-menu
+            }
+            $output .= "</li>";
+        }
+        $output .= "</ul>";
+        return $output;
+    }
+
 
     public function get_skills($limit = 1000)
     {
@@ -74,14 +118,14 @@ class home
         return $this->db->select("SELECT * FROM articles ORDER BY id DESC LIMIT $limit")->fetchAll();
     }
 
-    protected function get_articles_by_category($limit,$category)
+    protected function get_articles_by_category($limit, $category)
     {
-        return $this->db->select("SELECT a.*,t.title as t_title FROM articles as a left join article_type t on a.type = t.id where t.title like ? ORDER BY id DESC LIMIT $limit",["%$category%"])->fetchAll();
+        return $this->db->select("SELECT a.*,t.title as t_title FROM articles as a left join article_type t on a.type = t.id where t.title like ? ORDER BY id DESC LIMIT $limit", ["%$category%"])->fetchAll();
     }
 
-    protected function get_articles_by_tag($limit,$tag)
+    protected function get_articles_by_tag($limit, $tag)
     {
-        return $this->db->select("SELECT a.*,t.title as t_title FROM articles as a left join article_type t on a.type = t.id where a.tags like ? ORDER BY id DESC LIMIT $limit",["%$tag%"])->fetchAll();
+        return $this->db->select("SELECT a.*,t.title as t_title FROM articles as a left join article_type t on a.type = t.id where a.tags like ? ORDER BY id DESC LIMIT $limit", ["%$tag%"])->fetchAll();
     }
 
     protected function get_article_types()
@@ -93,14 +137,24 @@ class home
 
     public function get_health_services($parent)
     {
-        return $this->db->select("select * from health_ser where child_of=0")->fetchAll();
+        return $this->db->select("select * from health_ser where child_of=?", [$parent])->fetchAll();
+    }
 
+    public function get_all_health_services()
+    {
+        return $this->db->select("select * from health_ser order by child_of")->fetchAll();
     }
 
     protected function get_paraclinics($child_of)
     {
-        return $this->db->select("select * from paraclinic where child_of=?", [$child_of])->fetchAll();
+        return $this->db->select("select * from paraclinic where child_of=?",[$child_of])->fetchAll();
     }
+
+    protected function get_all_paraclinics()
+    {
+        return $this->db->select("select * from paraclinic order by child_of")->fetchAll();
+    }
+
 
     protected function get_fathers($list, $father_id)
     {

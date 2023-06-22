@@ -78,10 +78,8 @@
 
                         <li class="menu_item Paraclinic_btn"><a  href="<?= url('paraclinic') ?>" class="menu_link">پاراکلینیک<i class=" fas fa-chevron-down"></i> </a>
                             <ul class="subMenu">
-                                <?php if (count($parametrs['paraclinics']) >= 1) {
-                                    foreach ($parametrs['paraclinics'] as $para_clinic_List) { ?>
-                                        <li> <a href="<?= url('/paraclinic/'.clinik_urlencode( $para_clinic_List['url'])) ?>" class="subMenu_link"><?= $para_clinic_List['title'] ?></a></li>
-                                    <?php }
+                                <?php if (strlen($parametrs['paraclinics']) >= 1) {
+                                   echo $parametrs['paraclinics'];
                                 } else { ?>
                                     <span class="page_msg">!هیچ موردی در سایت ثبت نشده است</span>
                                 <?php } ?>
@@ -89,10 +87,8 @@
                         </li>
                         <li class="menu_item Paraclinic_btn"><a href="<?= url('health-service') ?>" class="menu_link">خدمات درمانی<i class=" fas fa-chevron-down"></i></a>
                             <ul class="subMenu">
-                                <?php if (count($parametrs['health_services']) >= 1) {
-                                    foreach ($parametrs['health_services'] as $para_clinic_List) { ?>
-                                        <li> <a href="<?= url('/health-service/'.clinik_urlencode( $para_clinic_List['url'])) ?>" class="subMenu_link"><?= $para_clinic_List['title'] ?></a></li>
-                                    <?php }
+                                <?php if (strlen($parametrs['health_services']) >= 1) {
+                                    echo $parametrs['health_services'];
                                 } else { ?>
                                     <span class="page_msg">!هیچ موردی در سایت ثبت نشده است</span>
                                 <?php } ?>

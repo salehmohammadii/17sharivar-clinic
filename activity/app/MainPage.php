@@ -10,12 +10,10 @@ class MainPage extends home
     
     public function index()
     {
-        $settings=$this->get_site_settings();
         $articles=$this->get_articles(3);
         $slides=$this->get_slides();
         $sliders=$this->get_sliders();
-        $paraclinics=$this->get_paraclinics(0);
-        $parametrs=['health_services'=>$this->get_health_services(0),'paraclinics'=>$paraclinics,'settings'=>$settings,'articles'=>$articles,'slide'=>$slides,'slider'=>$sliders];
+        $parametrs=array_merge($this->get_general_info(),['articles'=>$articles,'slide'=>$slides,'slider'=>$sliders]);
         $this->showpage("index.php", "کلینیک 17 شهریور", $parametrs);
     }
 
