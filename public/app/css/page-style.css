@@ -671,6 +671,20 @@ display: none;
     -o-border-radius: 2rem;
 	color: #000000;
 }
+.box3_header span {
+    border: 0.1rem solid #ff9700;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    color: #000000;
+}
+
+
+
 .box2_header small {
     font-size: 1.6rem;
 }

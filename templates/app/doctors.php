@@ -26,15 +26,12 @@
     <!-- ************ linkBox   code end ************* -->
     <section>
         <div class="container">
-            <div class="row bg">
                 <?php /** @var array $parametrs */
                 if (count($parametrs['posts']) >= 1) { ?>
-                <div class="col-12 col-md-12 col-lg-3">
-                <div class="col-12 col-md-12 col-lg-9">
                     <div class="box df">
                         <?php foreach ($parametrs['posts'] as $articles_List) { ?>
                             <div class="box2">
-                                <div class="box2_header df">
+                                <div class="box3_header df">
                                     <span><?= $articles_List['sk_title'] ?></span>
                                 </div>
                                 <div class="box2_poster">
