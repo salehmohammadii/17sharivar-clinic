@@ -35,6 +35,9 @@ class HealthServices extends admin
 
     public function store($request)
     {
+        if (empty($request['title'] or empty($request['content']) or empty($request['url']))){
+            $this->redirect("admin/health-service?action=0");
+        }
       if (empty($request['poster']['name'])) {
             $this->redirect("admin/health-service?action=0");
         } else {
@@ -90,6 +93,9 @@ class HealthServices extends admin
 
     public function update($request, $id)
     {
+        if (empty($request['title'] or empty($request['content']) or empty($request['url']))){
+            $this->redirect("admin/health-service/edit/$id?action=0");
+        }
         if (empty($request['poster']['name'])) {
             unset(  $request['poster']);
         } else {
@@ -124,7 +130,8 @@ class HealthServices extends admin
     }
 
     protected function  generate_table_of_childs($node, $dept=0) {
-        $indent=str_repeat('-',$dept);
+        $indent=str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;',$dept);
+        $indent.=str_repeat('-',$dept);
         if (!isset($node['children'])){
             $node['children']=[];
         }
@@ -133,7 +140,7 @@ class HealthServices extends admin
                             <td class=" text-info">
                                 '.$node['id'].'
                             </td>
-                            <td>
+                            <td class="table-title">
                                 <span class="text-dark fw-bolder text-hover-primary fs-6">'.$indent.$node['title'].'</span>
                             </td>
                             <td>

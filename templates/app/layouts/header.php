@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
     <!-- SEO Premium -->
-    <title>درمانگاه 17 شهریور</title>
+    <title><?= $title ?></title>
     <meta name="description" content="درمانگاه 17 شهـریور از سال 1370 در شهر تـهران فعالیت خود را آغاز نمود و در طی سال ها با همکاری مستمر با پزشـکان و کادر درمانی متـخصص توانست یکی از بهترین مراکز درمانی کشور باشد." />
     <link rel="canonical" href="<?= current_domain() ?>" />
     <meta property="og:locale" content="fa_IR" />

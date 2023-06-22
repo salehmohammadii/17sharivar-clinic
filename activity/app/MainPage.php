@@ -88,4 +88,19 @@ class MainPage extends home
         $content=$content['value']??'';
         $this->showpage('drugstore.php','داروخانه',array_merge(['content'=>$content],$this->get_general_info()));
     }
+
+    public function all_paraclinics()
+    {
+      $paras=$this->get_paraclinics(0,100000);
+        $this->showpage('all-paraclinic.php','پاراکلینیک ها',
+            array_merge($this->get_general_info(),['all_paras'=>$paras]));
+    }
+
+    public function all_health_service()
+    {
+        $paras=$this->get_health_services(0);
+        $this->showpage('all-health-service.php','خدمات',
+            array_merge($this->get_general_info(),['all_paras'=>$paras]));
+    }
+
 }

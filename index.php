@@ -414,6 +414,8 @@ uri("/",'app\MainPage',"index");
 uri("search",'app\MainPage',"doctor_search","POST");
 uri("about-us",'app\MainPage',"about_us");
 uri("paraclinic/{title}",'app\MainPage',"paraclinic");
+uri("paraclinic",'app\MainPage',"all_paraclinics");
+uri("health-service",'app\MainPage',"all_health_service");
 uri("health-service/{title}",'app\MainPage',"health_service");
 uri("terms",'app\MainPage',"terms");
 uri("privacy-policy",'app\MainPage',"privacy");

@@ -145,9 +145,9 @@ class home
         return $this->db->select("select * from health_ser order by child_of")->fetchAll();
     }
 
-    protected function get_paraclinics($child_of)
+    protected function get_paraclinics($child_of,$limit=8)
     {
-        return $this->db->select("select * from paraclinic where child_of=?",[$child_of])->fetchAll();
+        return $this->db->select("select * from paraclinic where child_of=? limit $limit",[$child_of])->fetchAll();
     }
 
     protected function get_all_paraclinics()

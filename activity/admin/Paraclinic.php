@@ -35,7 +35,10 @@ class Paraclinic extends admin
 
     public function store($request)
     {
-        if (empty($request['poster']['name'])) {
+        if (empty($request['title'] or empty($request['content']) or empty($request['url']))){
+            $this->redirect("admin/paraclinic?action=0");
+        }
+        if (empty($request['poster']['name']) ) {
             $this->redirect("admin/paraclinic?action=0");
         } else {
             $request['poster'] = $this->saveimage($request['poster'], 'setting');
@@ -76,6 +79,7 @@ class Paraclinic extends admin
 
     public function edit($id)
     {
+
         $db = new database();
         $paraclinic = $db->select('select p.*,a.title as father_name,a.id as father_id from paraclinic as p left join paraclinic as a on 
     p.child_of=a.id  where  p.id=?', [$id])->fetch();
@@ -90,6 +94,9 @@ class Paraclinic extends admin
 
     public function update($request, $id)
     {
+        if (empty($request['title'] or empty($request['content']) or empty($request['url']))){
+            $this->redirect("admin/paraclinic/edit/$id?action=0");
+        }
         if (empty($request['poster']['name'])) {
             unset(  $request['poster']);
         } else {
@@ -124,7 +131,8 @@ class Paraclinic extends admin
     }
 
     protected function  generate_table_of_childs($node, $dept=0) {
-        $indent=str_repeat('-',$dept);
+        $indent=str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;',$dept);
+        $indent.=str_repeat('-',$dept);
         if (!isset($node['children'])){
             $node['children']=[];
         }
@@ -133,7 +141,7 @@ class Paraclinic extends admin
                             <td class=" text-info">
                                 '.$node['id'].'
                             </td>
-                            <td>
+                            <td class="table-title">
                                 <span class="text-dark fw-bolder text-hover-primary fs-6">'.$indent.$node['title'].'</span>
                             </td>
                             <td>

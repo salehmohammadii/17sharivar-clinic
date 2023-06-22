@@ -12,6 +12,9 @@
     -ms-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
 }
+.table-title{
+    text-align: right;
+}
 .my_checkBox small{
     width: 75%;
     height: 75%;

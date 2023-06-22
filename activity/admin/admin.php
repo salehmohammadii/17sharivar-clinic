@@ -50,7 +50,8 @@ return true;
     }
 
     protected function  generate_dropdown_options($node,$selected=null, $dept=0) {
-        $indent=str_repeat('-',$dept);
+        $indent=str_repeat('&nbsp;&nbsp;&nbsp;',$dept);
+        $indent.=str_repeat('-',$dept);
         if (!isset($node['children'])){
             $node['children']=[];
         }
