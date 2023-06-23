@@ -31,7 +31,6 @@ class comment extends admin
         $db=new database();
         $request['name']=$request['name']!=''?$request['name']:'ادمین';
         $comment=$db->select('select * from comments where id=?',[$id])->fetch();
-        dd($comment);
         $db->create('comments',
             ['content','name','for_Article','replay_to'],
             [$request['content'],$request['name'],$comment['for_Article'],$comment['id']]);
