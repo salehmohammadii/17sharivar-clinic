@@ -55,7 +55,7 @@ class MainPage extends home
         $paraclinic= $this->db->select('select * from paraclinic where url=?',[$title])->fetch();
         $fathers=$this->get_fathers($paraclinics,$paraclinic['child_of']);
         $childs=$this->db->select('select * from paraclinic where child_of=?',[$paraclinic['id']])->fetchAll();
-        $this->showpage('paraclinic.php',$title,array_merge($this->get_general_info(),[
+        $this->showpage('paraclinic.php',$paraclinic['title'],array_merge($this->get_general_info(),[
             'paraclinic'=>$paraclinic,
             'fathers'=>$fathers,
             'childs'=>$childs
@@ -68,7 +68,7 @@ class MainPage extends home
         $health_service= $this->db->select('select * from health_ser where url=?',[$title])->fetch();
         $fathers=$this->get_fathers($health_services,$health_service['child_of']);
         $childs=$this->db->select('select * from health_ser where child_of=?',[$health_service['id']])->fetchAll();
-        $this->showpage('health-service.php',$title,array_merge($this->get_general_info(),[
+        $this->showpage('health-service.php',$health_service['title'],array_merge($this->get_general_info(),[
             'health_service'=>$health_service,
             'fathers'=>$fathers,
             'childs'=>$childs
