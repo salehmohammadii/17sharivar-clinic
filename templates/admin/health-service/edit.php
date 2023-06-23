@@ -20,7 +20,7 @@
                   <?= $parametrs['para']['content'];?>
               </textarea>
             <label class="d-block mt-5">  URL خدمات (از وارد کردن - در url خود داری نمایید)</label>
-            <input name="url" class="w-100 form-control mt-1 blog_input" value="  <?= $parametrs['para']['url'];?>" placeholder="لطفا URL خدمات  را وارد کنید" />
+            <input name="url" class="w-100 form-control mt-1 blog_input" value="<?= $parametrs['para']['url'];?>" placeholder="لطفا URL خدمات  را وارد کنید" />
             <div class=" d-flex align-items-center justify-content-end">
                     <button  class="btn btn-success mt-5" style="margin-right:auto;" type="submit">ویرایش کردن خدمات</button>
             </div>
