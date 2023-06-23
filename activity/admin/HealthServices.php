@@ -82,7 +82,7 @@ class HealthServices extends admin
         $db = new database();
         $paraclinic = $db->select('select p.*,a.title as father_name,a.id as father_id from health_ser as p left join health_ser as a on 
     p.child_of=a.id  where  p.id=?', [$id])->fetch();
-        $all_paraclinics = $db->select('select * from paraclinic order by child_of ')->fetchAll();
+        $all_paraclinics = $db->select('select * from health_ser order by child_of ')->fetchAll();
         $paraclinics=$this->get_array_of_childs($all_paraclinics);
         $html='';
         foreach ($paraclinics as $para){

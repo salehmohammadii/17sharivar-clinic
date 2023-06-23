@@ -38,8 +38,7 @@
                                     <img src="<?= assets( $articles_List['profile']); ?>" alt="poster">
                                 </div>
                                 <h2><?= $articles_List['full_name']; ?></h2>
-                                <span><?= $articles_List['resume']; ?> </span>
-                            </div>
+                                <span><?= $articles_List['resume']; ?> </span>                            </div>
                         <?php } ?>
                         <?php } ?>
                     </div>
